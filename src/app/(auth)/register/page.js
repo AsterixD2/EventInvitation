@@ -1,10 +1,11 @@
 "use client";
 
 import { Button, Input } from "@heroui/react";
-import link from "next/link";
-// import { OauthButton } from "../_components/oauth";
+import Link from "next/link";
 import { useActionState } from "react";
 import { registerAction } from "./action";
+import { OauthButton } from "../_components/oauth";
+
 export default function Page() {
   const [state, formAction, pending] = useActionState(registerAction, null);
   return (
@@ -43,8 +44,14 @@ export default function Page() {
             {state.message}
           </div>
         )}
+
+        <OauthButton />
       </section>
-      <section></section>
+      <section>
+        <p>
+          Have an account ? <Link href="/login">Login</Link>
+        </p>
+      </section>
     </main>
   );
 }
