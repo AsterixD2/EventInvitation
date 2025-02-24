@@ -2,9 +2,9 @@
 
 import { Button, Input } from "@heroui/react";
 import link from "next/link";
-import { OauthButton } from "../_components/oauth";
+// import { OauthButton } from "../_components/oauth";
 import { useActionState } from "react";
-
+import { registerAction } from "./action";
 export default function Page() {
   const [state, formAction, pending] = useActionState(registerAction, null);
   return (
@@ -43,7 +43,6 @@ export default function Page() {
             {state.message}
           </div>
         )}
-        <OauthButton />
       </section>
       <section></section>
     </main>
